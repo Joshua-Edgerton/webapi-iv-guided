@@ -12,7 +12,7 @@ server.get('/', (req, res) => {
   const message = process.env.MSG || "hello world!";
   Shoutouts.find()
   .then(shoutouts => {
-    res.status(200).json(message, shoutouts);
+    res.status(200).json({message, shoutouts});
   })
   .catch (error => {
     console.error('\nERROR', error);
